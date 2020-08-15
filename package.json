@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "nodemon",
+    "styleguide": "styleguidist server",
     "build": "rollup -c rollup.config.js -i src/index.js"
   },
   "keywords": [
@@ -16,13 +17,15 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "jest": "^26.4.0",
-    "rollup": "^2.26.0",
     "@babel/preset-env": "^7.11.0",
     "@rollup/plugin-babel": "^5.2.0",
+    "jest": "^26.4.0",
     "nodemon": "^2.0.4",
+    "react-styleguidist": "^11.0.8",
+    "rollup": "^2.26.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.0"
+    "rollup-plugin-terser": "^7.0.0",
+    "webpack": "^4.44.1"
   }
 }

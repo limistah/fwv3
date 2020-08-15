@@ -3,7 +3,8 @@
   "ignore": [".git", "node_modules/**/node_modules", "tests"],
   "verbose": true,
   "execMap": {
-    "build": "npm run build"
+    "build": "npm run build",
+    "styleguide": "npm run styleguide"
   },
   "events": {
     "restart": "echo 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
