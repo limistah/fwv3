@@ -1,9 +1,10 @@
 module.exports = {
+  styleguideDir: './docs',
   sections: [
     {
-      name: "Introduction",
-      content: "./README.MD",
-    },
+      name: 'Introduction',
+      content: './README.MD'
+    }
     // {
     //   name: "UI Components",
     //   content: "docs/ui.md",
@@ -11,5 +12,5 @@ module.exports = {
     //   exampleMode: "expand", // 'hide' | 'collapse' | 'expand'
     //   usageMode: "expand", // 'hide' | 'collapse' | 'expand'
     // },
-  ],
-};
+  ]
+}

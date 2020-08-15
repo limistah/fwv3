@@ -2,11 +2,13 @@
   "name": "fwv3",
   "version": "0.0.1",
   "description": "Flutterwave V3",
-  "main": "index.js",
+  "main": "./dist/fwv3.js",
   "scripts": {
     "test": "jest",
     "dev": "nodemon",
+    "prepublish": "npm run styleguide:build && npm run build",
     "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
     "build": "rollup -c rollup.config.js -i src/index.js"
   },
   "keywords": [
@@ -16,6 +18,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "core-js": "^3.6.5",
     "got": "^11.5.2",
     "node-forge": "^0.9.1"
   },
