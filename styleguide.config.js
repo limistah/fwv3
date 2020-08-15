@@ -2,7 +2,7 @@ module.exports = {
   sections: [
     {
       name: "Introduction",
-      content: "README.MD",
+      content: "./README.MD",
     },
     // {
     //   name: "UI Components",
