@@ -1,6 +1,6 @@
 {
   "name": "fwv3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Flutterwave V3",
   "main": "./dist/fwv3.js",
   "scripts": {
@@ -15,7 +15,12 @@
     "flutterwave",
     "payment"
   ],
-  "author": "",
+  "author": "Aleem Isiaka <aleem.isiaka@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limistah/fwv3"
+  },
+  "homepage": "https://limistah.github.io/fwv3",
   "license": "MIT",
   "dependencies": {
     "core-js": "^3.6.5",
