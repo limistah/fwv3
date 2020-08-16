@@ -5,19 +5,27 @@ import { terser } from 'rollup-plugin-terser'
 
 const dist = './dist/'
 const name = 'fwjs'
+const intro = `/* Hello */`
+const footer = `/* Hello End */`
 
 export default {
   input: './src/index.js',
   output: [
     {
+      intro,
+      footer,
       file: `${dist}${name}.cjs.js`,
       format: 'cjs'
     },
     {
+      intro,
+      footer,
       file: `${dist}${name}.esm.js`,
       format: 'esm'
     },
     {
+      intro,
+      footer,
       name: 'FocusOverlay',
       file: `${dist}${name}.js`,
       format: 'umd'
