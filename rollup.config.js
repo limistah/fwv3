@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 
 const dist = './dist/';
-const name = 'fwjs';
+const name = 'flwjs';
 const intro = `/* Hello */`;
 const footer = `/* Hello End */`;
 
@@ -26,7 +26,7 @@ export default {
     {
       intro,
       footer,
-      name: 'FocusOverlay',
+      name: 'Flutterwave JS',
       file: `${dist}${name}.js`,
       format: 'umd'
     }

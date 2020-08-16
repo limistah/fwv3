@@ -35,9 +35,9 @@ function FW(options = {}) {
   );
 
   // Set the keys on the instance
-  this.PUBLIC_KEY = process.env.FW_PUBLIC_KEY || publicKey;
-  this.SECRET_KEY = process.env.FW_SECRET_KEY || secretKey;
-  this.ENCRYPTION_KEY = process.env.FW_ENCRYPTION_KEY || encryptKey;
+  this.PUBLIC_KEY = process.env.FLW_PUBLIC_KEY || publicKey;
+  this.SECRET_KEY = process.env.FLW_SECRET_KEY || secretKey;
+  this.ENCRYPTION_KEY = process.env.FLW_ENCRYPTION_KEY || encryptKey;
   this.MODE = mode;
   this.VERSION = version;
 
@@ -81,24 +81,24 @@ const prototype = {
 FW.prototype = prototype;
 
 // always return a new prototype
-// We can have as many FW instance as we want pointing to different prototype object
-const fw = (args) => new FW();
+// We can have as many FlW instance as we want pointing to different prototype object
+const flw = (args) => new FW();
 
 // Usage
 // after import call the exported function (fw, in this case)
-const _fw = fw();
+const _flw = fw();
 // Instantiate it again.
-const __fw = fw();
+const __flw = fw();
 
 //
-console.log(_fw.baseURL);
+console.log(_flw.baseURL);
 
 // Try setting the base URL
-_fw.setBaseURL(config.LIVE_MODE);
+_flw.setBaseURL(config.LIVE_MODE);
 
-console.log(_fw.baseURL); // Outputs the live URL
-console.log(__fw.baseURL); // outputs the sandbox URL (different prototype)
-console.log(_fw.encrypt('what are we trying?')); // Encryption
-console.log(_fw.makePayload({ cardNumber: 'String' }, false)); // Payload maker
+console.log(_flw.baseURL); // Outputs the live URL
+console.log(__flw.baseURL); // outputs the sandbox URL (different prototype)
+console.log(_flw.encrypt('what are we trying?')); // Encryption
+console.log(_flw.makePayload({ cardNumber: 'String' }, false)); // Payload maker
 
 module.exports = fw;
