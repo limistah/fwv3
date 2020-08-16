@@ -1,26 +1,10 @@
-import forge from 'node-forge'
-import crypto from 'crypto'
-
+import arky from 'arky';
 /**
- * Encryption algorithm
+ * Encrypts payload
  * @param {string} key Encryption Key from flutterwave dashboard
  * @param {string} text JSON stringified card payload
  */
-function encrypt(key, text) {
-  if (key.length !== 24) {
-    return false
-  }
-  const cipher = forge.cipher.createCipher(
-    '3DES-ECB',
-    forge.util.createBuffer(key)
-  )
-  cipher.start({
-    iv: ''
-  })
-  cipher.update(forge.util.createBuffer(text, 'utf-8'))
-  cipher.finish()
-  const encrypted = cipher.output
-  return forge.util.encode64(encrypted.getBytes())
-}
+const encrypt = (text, key = envKey) =>
+  arky.encrypt(text, key, 'des-ede3-cbc', 8);
 
-export default encrypt
+export default encrypt;

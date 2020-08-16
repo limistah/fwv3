@@ -1,12 +1,12 @@
-import babel from '@rollup/plugin-babel'
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
+import babel from '@rollup/plugin-babel';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import { terser } from 'rollup-plugin-terser';
 
-const dist = './dist/'
-const name = 'fwjs'
-const intro = `/* Hello */`
-const footer = `/* Hello End */`
+const dist = './dist/';
+const name = 'fwjs';
+const intro = `/* Hello */`;
+const footer = `/* Hello End */`;
 
 export default {
   input: './src/index.js',
@@ -32,7 +32,9 @@ export default {
     }
   ],
   plugins: [
-    resolve(),
+    resolve({
+      preferBuiltins: true
+    }),
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'runtime',
@@ -55,4 +57,4 @@ export default {
     commonjs(),
     terser()
   ]
-}
+};
