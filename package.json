@@ -1,8 +1,8 @@
 {
-  "name": "fwv3",
+  "name": "fwjs",
   "version": "0.0.2",
-  "description": "Flutterwave V3",
-  "main": "./dist/fwv3.js",
+  "description": "Unofficial Flutterwave JavaScript SDK",
+  "main": "./dist/fw.js",
   "scripts": {
     "test": "jest",
     "dev": "nodemon",
@@ -23,6 +23,7 @@
   "homepage": "https://limistah.github.io/fwv3",
   "license": "MIT",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "core-js": "^3.6.5",
     "got": "^11.5.2",
     "node-forge": "^0.9.1"

@@ -1,47 +1,50 @@
-import babel from "@rollup/plugin-babel";
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
+import babel from '@rollup/plugin-babel'
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
-const dist = "./dist/";
-const name = "fwv3";
+const dist = './dist/'
+const name = 'fwjs'
 
 export default {
-  input: "./src/index.js",
+  input: './src/index.js',
   output: [
     {
       file: `${dist}${name}.cjs.js`,
-      format: "cjs",
+      format: 'cjs'
     },
     {
       file: `${dist}${name}.esm.js`,
-      format: "esm",
+      format: 'esm'
     },
     {
-      name: "FocusOverlay",
+      name: 'FocusOverlay',
       file: `${dist}${name}.js`,
-      format: "umd",
-    },
+      format: 'umd'
+    }
   ],
   plugins: [
     resolve(),
     babel({
-      exclude: "node_modules/**",
+      exclude: 'node_modules/**',
+      babelHelpers: 'runtime',
+      plugins: ['@babel/plugin-transform-runtime'],
       presets: [
         [
-          "@babel/env",
+          '@babel/env',
           {
             modules: false,
             targets: {
-              browsers: "> 1%, IE 11, not op_mini all, not dead",
-              node: 8,
+              browsers: '> 1%, IE 11, not op_mini all, not dead',
+              node: 8
             },
-            useBuiltIns: "usage",
-          },
-        ],
-      ],
+            useBuiltIns: 'usage',
+            corejs: '3'
+          }
+        ]
+      ]
     }),
     commonjs(),
-    terser(),
-  ],
-};
+    terser()
+  ]
+}
